@@ -30,41 +30,33 @@ export const DATA = {
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "adityanarayan29j@gmail.com",
+    tel: "+971557742586",
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://dub.sh/dillion-github",
+        url: "https://dub.sh/aditya29-github",
         icon: Icons.github,
 
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://dub.sh/dillion-linkedin",
+        url: "https://dub.sh/aditya29-linkedin",
         icon: Icons.linkedin,
 
         navbar: true,
       },
       X: {
         name: "X",
-        url: "https://dub.sh/dillion-twitter",
+        url: "https://dub.sh/aditya29-twitter",
         icon: Icons.x,
-
-        navbar: true,
-      },
-      Youtube: {
-        name: "Youtube",
-        url: "https://dub.sh/dillion-youtube",
-        icon: Icons.youtube,
         navbar: true,
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "adityanarayan29j@gmail.com",
         icon: Icons.email,
-
         navbar: false,
       },
     },
