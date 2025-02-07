@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Software Engineer. I love building things and helping people. Easily available on Linkedin & X.",
   summary:
-    "A focused software engineer based in [Dubai](https://maps.app.goo.gl/fxU4gkJWLwGz3AScA) passionate about building intuitive digital [experiences](). With expertise in React, Node.js, Javascript, and Python, I’ve contributed to impactful projects at TCS Digital, Trasna (Workz), Datoms and other companies. Beyond coding, I explore problem solving over [Leetcode](https://leetcode.com/u/AdityaNarayan29/), trading strategies, and connecting technology with human experiences. Let’s build something awesome together!",
+    "A focused software engineer based in [Dubai](https://maps.app.goo.gl/fxU4gkJWLwGz3AScA) passionate about building intuitive digital [experiences](). With expertise in React, Node.js & Javascript (TS), I’ve contributed to impactful projects at TCS Digital, Trasna (Workz), Datoms and a few other companies. [Fancier Portfolio](https://aditya29.netlify.app/) Beyond coding, I explore problem solving over [Leetcode](https://leetcode.com/u/AdityaNarayan29/), trading strategies, and connecting technology with human experiences. Let’s build something awesome together!",
   avatarUrl: "/me.png",
   skills: [
     "React",
