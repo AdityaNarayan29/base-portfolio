@@ -165,9 +165,7 @@ export default function Page() {
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
+                  {DATA.hackathons.length}+ hackathons and coding competitions. It was eye-opening to see the endless possibilities
                   brought to life by a group of motivated and passionate
                   individuals.
                 </p>
@@ -188,6 +186,7 @@ export default function Page() {
                     dates={project.dates}
                     image={project.image}
                     links={project.links}
+                    win={project.win}
                   />
                 </BlurFade>
               ))}
@@ -212,7 +211,12 @@ export default function Page() {
                   className="text-blue-500 hover:underline"
                 >
                   with a direct question on twitter
-                </Link>{" "}
+                </Link>{" "} <Link
+                  href={DATA.contact.social.LinkedIn.url}
+                  className="text-blue-500 hover:underline"
+                >
+                  or LinkedIn
+                </Link>{" "} 
                 and I&apos;ll respond whenever I can. I will ignore all
                 soliciting.
               </p>

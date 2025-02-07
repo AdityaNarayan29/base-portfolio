@@ -13,6 +13,7 @@ interface Props {
     title: string;
     href: string;
   }[];
+  win?: string;
 }
 
 export function HackathonCard({
@@ -22,6 +23,7 @@ export function HackathonCard({
   location,
   image,
   links,
+  win,
 }: Props) {
   return (
     <li className="relative ml-10 py-4">
@@ -38,6 +40,11 @@ export function HackathonCard({
         <h2 className="font-semibold leading-none">{title}</h2>
         {location && (
           <p className="text-sm text-muted-foreground">{location}</p>
+        )}
+        {win && (
+          <span className="font-semibold prose dark:prose-invert text-sm ">
+            {win}
+          </span>
         )}
         {description && (
           <span className="prose dark:prose-invert text-sm text-muted-foreground">
