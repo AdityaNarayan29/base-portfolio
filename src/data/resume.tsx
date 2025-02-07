@@ -293,7 +293,7 @@ export const DATA = {
       location: "Remote - International",
       description: "State rank holder with a global rank of 688 among 350K+ participants with a 99.99 percentile in a competitive coding contest",
       image:"/tcs.jpeg",
-      win: "Rank holder | 99.99 percentile",
+      win: "Rank holder | 99.81 percentile",
       links: [],
     },
     {
