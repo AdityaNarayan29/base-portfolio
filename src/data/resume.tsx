@@ -164,59 +164,31 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "Mast UI",
+      href: "https://mast-ui.vercel.app/",
+      dates: "May 2025 - Present",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "Mast UI is a beautifully designed component library built on top of TailwindCSS and Shadcn UI. It provides a collection of accessible, customizable, and production-ready UI components for modern web applications. Inspired by Vercel and Linear aesthetics, Mast UI focuses on clean design, developer experience, and flexibility.",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
+        "React",
+        "TypeScript",
         "TailwindCSS",
-        "Stripe",
         "Shadcn UI",
-        "Magic UI",
+        "Radix UI",
+        "Vite",
+        "Framer Motion",
+        "Lucide Icons",
       ],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
-    },
-    {
-      title: "Magic UI",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
-      active: true,
-      description:
-        "Designed, developed and sold animated UI components for developers.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://magicui.design",
+          href: "https://mast-ui.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
         {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
+          type: "GitHub",
+          href: "https://github.com/AdityaNarayan29/mast-ui",
           icon: <Icons.github className="size-3" />,
         },
       ],
@@ -224,67 +196,42 @@ export const DATA = {
       video: "https://cdn.magicui.design/bento-grid.mp4",
     },
     {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
+      title: "EventSpheres",
+      href: "https://eventsphere.app", // Replace with actual link
+      dates: "Dec 2024 - Present", // Adjust as needed
       active: true,
       description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
+        "EventSphere is a full-featured event management platform that allows organizers to create, manage, and promote events while enabling attendees to register, RSVP, and receive real-time updates. It supports features like ticketing, calendar sync, reminder notifications, and dashboard analytics.",
       technologies: [
+        "React",
+        "TypeScript",
         "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
         "TailwindCSS",
         "Shadcn UI",
-        "Magic UI",
+        "PostgreSQL",
+        "Prisma",
+        "Node.js",
         "Stripe",
-        "Cloudflare Workers",
+        "Vercel",
+        "Docker",
+        "Supabase",
       ],
       links: [
         {
           type: "Website",
-          href: "https://llm.report",
+          href: "https://eventsphere.app", // Replace if different
           icon: <Icons.globe className="size-3" />,
         },
         {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
+          type: "GitHub",
+          href: "https://github.com/AdityaNarayan29/event-planner-monorepo",
           icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
       video: "https://cdn.llm.report/openai-demo.mp4",
     },
-    {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://automatic.chat",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
-    },
+
   ],
   hackathons: [
     {
