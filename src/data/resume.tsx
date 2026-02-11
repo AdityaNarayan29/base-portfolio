@@ -47,8 +47,14 @@ export const DATA = {
     "GitHub Actions",    
     "CI/CD",
     "LangChain",
+    "LangGraph",
     "Pinecone",
     "OpenAI APIs",
+    "Groq",
+    "Gemini API",
+    "Anthropic API",
+    "MetaTrader 5",
+    "SQLite",
     "Git",
     "Jest",
     "Cypress",
@@ -204,6 +210,35 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "Masst Trader",
+      href: "https://trader.masst.dev",
+      dates: "Feb 2025 - Present",
+      active: true,
+      description:
+        "AI-powered trading education & strategy platform connected to MetaTrader 5. Describe strategies in plain English, backtest on real historical data, get AI trade analysis with coaching feedback, and execute algo trades — all from the browser.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "FastAPI",
+        "Python",
+        "MetaTrader 5",
+        "TailwindCSS",
+        "Groq",
+        "OpenAI",
+        "SQLite",
+        "AWS",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://trader.masst.dev",
+          icon: <Icons.globe className='size-3' />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
       title: "LeetDaily",
       href: "https://leetdaily.masst.dev",
       dates: "Jan 2024 - Present",
@@ -234,7 +269,7 @@ export const DATA = {
       dates: "Jan 2024 - Present",
       active: true,
       description:
-        "AI-powered system design platform with 35+ HLD/LLD roadmaps using LangChain, Pinecone, OpenAI. Comprehensive learning resource for system design interviews.",
+        "AI-powered learning platform with 35+ system design HLD/LLD roadmaps, trading strategy guides, and interactive AI tutoring using LangChain, Pinecone, OpenAI. Comprehensive resource for system design interviews and trading education.",
       technologies: [
         "Next.js",
         "TypeScript",
