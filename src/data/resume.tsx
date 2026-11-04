@@ -8,9 +8,9 @@ export const DATA = {
   location: "Dubai, UAE",
   locationLink: "https://www.google.com/maps/place/dubai",
   description:
-    "Full Stack Engineer building scalable SaaS platforms. Expert in Next.js, React, TypeScript, Node.js, and NestJS.",
+    "Senior AI Engineer & acting CTO at HireStella, building AI employees for Gulf enterprises. Full-stack and architecture heavy: Next.js, NestJS, FastAPI, LangGraph.",
   summary:
-    "Full Stack Engineer based in [Dubai](https://maps.app.goo.gl/fxU4gkJWLwGz3AScA) building scalable SaaS platforms. Expert in Next.js, React, TypeScript and Node.js, NestJS, PostgreSQL, architecting systems serving 1.2B+ devices. Founded [Masst.dev](https://masst.dev), a developer toolkit featuring CLI scaffolding, UI components, and AI-powered system design resources. Skilled in microservices, multi-tenant systems, and leading teams of 4+ developers. [LeetCode: 500+ problems](https://leetcode.com/u/AdityaNarayan29/)",
+    "Senior AI Engineer and acting CTO at [HireStella](https://hirestella.ai) in [Dubai](https://maps.app.goo.gl/fxU4gkJWLwGz3AScA), leading a 12-person engineering team building Stella, an AI employee for Gulf enterprises. Previously architected systems serving 1.2B+ devices. Founded [Masst.dev](https://masst.dev), a developer toolkit featuring CLI scaffolding, UI components, and AI-powered system design resources. Skilled in agentic AI systems, voice AI, microservices and multi-tenant SaaS. [LeetCode: 516+ problems](https://leetcode.com/u/AdityaNarayan29/)",
   avatarUrl: "/me.png",
   skills: [
     "TypeScript",
@@ -35,12 +35,14 @@ export const DATA = {
     "Microservices",
     "RabbitMQ",
     "PostgreSQL",
+    "pgvector",
     "MongoDB",
     "Redis",
     "Prisma ORM",
     "Supabase",
     "TimescaleDB",
     "AWS",
+    "Azure",
     "Docker",
     "Kubernetes",
     "Vercel",
@@ -48,6 +50,9 @@ export const DATA = {
     "CI/CD",
     "LangChain",
     "LangGraph",
+    "LiveKit",
+    "Temporal",
+    "Langfuse",
     "Pinecone",
     "OpenAI APIs",
     "Groq",
@@ -98,6 +103,30 @@ export const DATA = {
 
   work: [
     {
+      company: "HireStella",
+      href: "https://hirestella.ai/",
+      badges: [],
+      location: "Dubai, UAE",
+      title: "Senior AI Engineer (Acting CTO)",
+      logoUrl: "https://hirestella.ai/icons/favicon-512.png",
+      start: "Jul 2026",
+      end: "Present",
+      description:
+        "Leading a 12-person engineering team (3 senior devs, 3 junior devs, 6 interns) building Stella, an AI employee that Gulf businesses hire to work alongside their teams across voice, chat, marketing, scheduling, LMS and analytics in 120+ languages. Built a super agent orchestrating every Stella product (marketing, voice AI, multiple CRMs), each with its own agentic layer. Cut voice AI call cost from ~$100/hr to under $3/hr. Architected a FastAPI agent plane and NestJS control plane with LangGraph + Temporal orchestration, self-hosted LiveKit voice, Langfuse observability and Postgres + pgvector; leading the migration to AWS me-central-1 for UAE PDPL data residency.",
+    },
+    {
+      company: "Masst.dev / masst.ai",
+      href: "https://masst.dev/",
+      badges: [],
+      location: "Dubai, UAE",
+      title: "Freelance Developer",
+      logoUrl: "",
+      start: "Feb 2026",
+      end: "Jun 2026",
+      description:
+        "Built and shipped products under my own Masst brand: masst.ai, a \"company brain\" AI knowledge layer, and the Masst developer ecosystem (CLI, UI library, system design docs, LeetDaily).",
+    },
+    {
       company: "Azaya LLC",
       href: "https://azaya.io/",
       badges: [],
@@ -105,7 +134,7 @@ export const DATA = {
       title: "Senior Software Engineer",
       logoUrl: "/azaya.png",
       start: "Nov 2025",
-      end: "Present",
+      end: "Feb 2026",
       description:
         "Engineered a multi-tenant SaaS CRM from scratch using multi-tier microservices for isolated data tenancy across 5 brokers. Built system scaffold with Node.js, NestJS, Prisma, PostgreSQL handling 10K+ daily transactions. Deployed AWS infrastructure (EC2, RDS PostgreSQL) hosting 15+ MT5 instances with 99.9% uptime. Crafted responsive dashboards with Next.js, TypeScript, Tailwind CSS reducing load time by 40%. Led 4 engineers with code reviews improving sprint velocity by 25%.",
     },
@@ -210,6 +239,32 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "masst.ai",
+      href: "https://masst.ai",
+      dates: "Feb 2026 - Present",
+      active: true,
+      description:
+        "A \"company brain\": an AI knowledge layer that plugs into any product or workflow to answer from a company's own data. Live, in MVP.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "LangGraph",
+        "pgvector",
+        "PostgreSQL",
+        "OpenAI",
+        "Anthropic API",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://masst.ai",
+          icon: <Icons.globe className='size-3' />,
+        },
+      ],
+      image: "",
+      video: "",
+    },
+    {
       title: "Masst Trader",
       href: "https://trader.masst.dev",
       dates: "Feb 2025 - Present",
@@ -269,7 +324,7 @@ export const DATA = {
       dates: "Jan 2024 - Present",
       active: true,
       description:
-        "AI-powered learning platform with 35+ system design HLD/LLD roadmaps, trading strategy guides, and interactive AI tutoring using LangChain, Pinecone, OpenAI. Comprehensive resource for system design interviews and trading education.",
+        "AI-powered learning platform with 750K+ organic visits, 35+ system design HLD/LLD roadmaps, trading strategy guides, and interactive AI tutoring using LangChain, Pinecone, OpenAI. Comprehensive resource for system design interviews and trading education.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -413,7 +468,7 @@ export const DATA = {
       dates: "May 2022",
       location: "Remote - International",
       description:
-        "State rank holder with a global rank of 688 among 350K+ participants with a 99.99 percentile in a competitive coding contest",
+        "State rank holder with a global rank of 688 among 350K+ participants with a 99.81 percentile in a competitive coding contest",
       image: "/tcs.jpeg",
       win: "Rank holder | 99.81 percentile",
       links: [],
