@@ -121,10 +121,10 @@ export const DATA = {
       location: "Dubai, UAE",
       title: "Founder",
       logoUrl: "",
-      start: "Feb 2026",
+      start: "Jun 2024",
       end: "Present",
       description:
-        "Founded and run my own product org: masst.ai, a \"company brain\" AI knowledge layer; Tap to Trade, one-tap MT5 trading used by 5K active traders; and the Masst developer ecosystem (CLI, UI library, Masst Docs with 750K+ visits, LeetDaily).",
+        "Founded Masst in Jun 2024 as my own product org, building alongside full-time roles. Took a career break from Mar to Jun 2026 to build masst.ai full-time: a \"company brain\" AI knowledge layer. Also ship Tap to Trade, one-tap MT5 trading used by 5K active traders, and the Masst developer ecosystem (CLI, UI library, Masst Docs with 750K+ visits, LeetDaily).",
     },
     {
       company: "Azaya LLC",
@@ -177,7 +177,7 @@ export const DATA = {
     {
       title: "masst.ai",
       href: "https://masst.ai",
-      dates: "Feb 2026 - Present",
+      dates: "Mar 2026 - Present",
       active: true,
       description:
         "A \"company brain\": an AI knowledge layer that plugs into any product or workflow to answer from a company's own data. Live, in MVP.",
@@ -269,7 +269,7 @@ export const DATA = {
     {
       title: "Masst Docs",
       href: "https://docs.masst.dev",
-      dates: "Jan 2024 - Present",
+      dates: "Jun 2024 - Present",
       active: true,
       description:
         "750K+ organic visits. AI-powered learning platform with 35+ system design HLD/LLD roadmaps, trading strategy guides, and interactive AI tutoring using LangChain, Pinecone, OpenAI. Comprehensive resource for system design interviews and trading education.",
@@ -326,7 +326,7 @@ export const DATA = {
     {
       title: "Masst CLI",
       href: "https://cli.masst.dev",
-      dates: "Jan 2024 - Present",
+      dates: "Jun 2024 - Present",
       active: true,
       description:
         "CLI tool that scaffolds SaaS monorepos with Next.js, NestJS, Prisma, Docker in 60 seconds. Streamlines project setup with best practices and production-ready configurations.",
@@ -357,7 +357,7 @@ export const DATA = {
     {
       title: "Masst DB",
       href: "https://adityanarayan29.github.io/masstDB/",
-      dates: "Jan 2024 - Present",
+      dates: "Jun 2024 - Present",
       active: true,
       description:
         "A Go CLI for multi-database backups with AWS S3 integration, compression, and scheduled operations. Supports PostgreSQL, MongoDB, and MySQL with automated backup strategies.",
@@ -387,7 +387,7 @@ export const DATA = {
     {
       title: "Masst Campus",
       href: "https://campus.masst.dev",
-      dates: "Jan 2024 - Present",
+      dates: "Jun 2024 - Present",
       active: true,
       description:
         "Student Management System (SMS) for educational institutions. Manages student records, attendance, grades, course enrollment, and academic reporting with role-based access control.",
