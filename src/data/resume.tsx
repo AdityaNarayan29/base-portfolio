@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Senior AI Engineer & acting CTO at HireStella, building AI employees for Gulf enterprises. Full-stack and architecture heavy: Next.js, NestJS, FastAPI, LangGraph.",
   summary:
-    "Senior AI Engineer and acting CTO at [HireStella](https://hirestella.ai) in [Dubai](https://maps.app.goo.gl/fxU4gkJWLwGz3AScA), leading a 12-person engineering team building Stella, an AI employee for Gulf enterprises. Previously architected systems serving 1.2B+ devices. Shipped products used by 5K+ active traders and 750K+ learners. Founded [Masst.dev](https://masst.dev) and [masst.ai](https://masst.ai), a developer toolkit featuring CLI scaffolding, UI components, and AI-powered system design resources. Skilled in agentic AI systems, voice AI, microservices and multi-tenant SaaS. [LeetCode: 516+ problems](https://leetcode.com/u/AdityaNarayan29/)",
+    "Senior AI Engineer and acting CTO at [HireStella](https://hirestella.ai) in [Dubai](https://maps.app.goo.gl/fxU4gkJWLwGz3AScA), leading the engineering team building Stella, an AI employee for Gulf enterprises. Previously architected systems serving 1.2B+ devices. Shipped products used by 5K+ active traders and 750K+ learners. Founded [Masst.dev](https://masst.dev) and [masst.ai](https://masst.ai), a developer toolkit featuring CLI scaffolding, UI components, and AI-powered system design resources. Skilled in agentic AI systems, voice AI, microservices and multi-tenant SaaS. [LeetCode: 516+ problems](https://leetcode.com/u/AdityaNarayan29/)",
   avatarUrl: "/me.png",
   skills: [
     "TypeScript",
