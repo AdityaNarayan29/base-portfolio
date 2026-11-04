@@ -158,7 +158,7 @@ export const DATA = {
       title: "Software Engineer",
       logoUrl: "/tcs.jpeg",
       start: "Jun 2022",
-      end: "Jan 2023",
+      end: "Aug 2022",
       description:
         "Performed 15+ vulnerability assessments with BurpSuite / OWASP ZAP; achieved 95% test coverage through TDD. Contributed to improving web application security by identifying and mitigating vulnerabilities using OWASP Top 10 methodologies.",
     },
