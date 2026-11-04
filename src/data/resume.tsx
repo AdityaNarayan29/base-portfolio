@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Senior AI Engineer & acting CTO at HireStella, building AI employees for Gulf enterprises. Full-stack and architecture heavy: Next.js, NestJS, FastAPI, LangGraph.",
   summary:
-    "Senior AI Engineer and acting CTO at [HireStella](https://hirestella.ai) in [Dubai](https://maps.app.goo.gl/fxU4gkJWLwGz3AScA), leading a 12-person engineering team building Stella, an AI employee for Gulf enterprises. Previously architected systems serving 1.2B+ devices. Founded [Masst.dev](https://masst.dev), a developer toolkit featuring CLI scaffolding, UI components, and AI-powered system design resources. Skilled in agentic AI systems, voice AI, microservices and multi-tenant SaaS. [LeetCode: 516+ problems](https://leetcode.com/u/AdityaNarayan29/)",
+    "Senior AI Engineer and acting CTO at [HireStella](https://hirestella.ai) in [Dubai](https://maps.app.goo.gl/fxU4gkJWLwGz3AScA), leading a 12-person engineering team building Stella, an AI employee for Gulf enterprises. Previously architected systems serving 1.2B+ devices. Shipped products used by 5K+ active traders and 750K+ learners. Founded [Masst.dev](https://masst.dev) and [masst.ai](https://masst.ai), a developer toolkit featuring CLI scaffolding, UI components, and AI-powered system design resources. Skilled in agentic AI systems, voice AI, microservices and multi-tenant SaaS. [LeetCode: 516+ problems](https://leetcode.com/u/AdityaNarayan29/)",
   avatarUrl: "/me.png",
   skills: [
     "TypeScript",
@@ -70,7 +70,7 @@ export const DATA = {
   ],
   contact: {
     email: "adityanarayan29j@gmail.com",
-    tel: "+971557742586",
+    tel: "",
     social: {
       GitHub: {
         name: "GitHub",
@@ -119,19 +119,19 @@ export const DATA = {
       href: "https://masst.dev/",
       badges: [],
       location: "Dubai, UAE",
-      title: "Freelance Developer",
+      title: "Founder",
       logoUrl: "",
       start: "Feb 2026",
-      end: "Jun 2026",
+      end: "Present",
       description:
-        "Built and shipped products under my own Masst brand: masst.ai, a \"company brain\" AI knowledge layer, and the Masst developer ecosystem (CLI, UI library, system design docs, LeetDaily).",
+        "Founded and run my own product org: masst.ai, a \"company brain\" AI knowledge layer; Tap to Trade, one-tap MT5 trading used by 5K active traders; and the Masst developer ecosystem (CLI, UI library, Masst Docs with 750K+ visits, LeetDaily).",
     },
     {
       company: "Azaya LLC",
       href: "https://azaya.io/",
       badges: [],
       location: "Dubai, UAE",
-      title: "Senior Software Engineer",
+      title: "Full Stack Developer",
       logoUrl: "/azaya.png",
       start: "Nov 2025",
       end: "Feb 2026",
@@ -162,54 +162,6 @@ export const DATA = {
       description:
         "Performed 15+ vulnerability assessments with BurpSuite / OWASP ZAP; achieved 95% test coverage through TDD. Contributed to improving web application security by identifying and mitigating vulnerabilities using OWASP Top 10 methodologies.",
     },
-    {
-      company: "Upwork",
-      href: "https://www.upwork.com/",
-      badges: [],
-      location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/upwork.webp",
-      start: "Dec 2021",
-      end: "Jun 2022",
-      description:
-        "As a freelance software developer, I built dynamic, responsive websites using React, Bootstrap, Material UI, Node.js, and Express. I handled end-to-end development, from architecture design to delivery, collaborating with diverse clients to create user-friendly solutions. This experience enhanced my expertise in web technologies and established me as a reliable professional.",
-    },
-    {
-      company: "Datoms",
-      href: "https://datoms.io/",
-      badges: [],
-      location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/datoms.jpg",
-      start: "Feb 2021",
-      end: "Jun 2021",
-      description:
-        "During my software developer internship at Datoms, I led a team of three to develop a smart street lighting system. I designed and implemented the front-end using React and AntDesign, built the back-end with Node.js and Express, and created a dashboard for system management.",
-    },
-    {
-      company: "The Next",
-      href: "https://www.linkedin.com/company/the-nextt/",
-      badges: [],
-      location: "Remote",
-      title: "Software Engineer Intern",
-      logoUrl: "/next.jpeg",
-      start: "Sep 2020",
-      end: "Nov 2020",
-      description:
-        "During my internship at The Next, an ed-tech startup, I developed SPA, optimized code for performance, designed scalable architectures, and ensured timely delivery. This experience honed my web development skills and deepened my passion for software development.",
-    },
-    {
-      company: "Sanscript Technologies",
-      href: "https://www.linkedin.com/company/swbc-tech",
-      badges: [],
-      location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/sanscript.jpeg",
-      start: "Jun 2020",
-      end: "Aug 2020",
-      description:
-        "During my Sanscript(SWBC) internship, I led a team to develop an ed-tech product, creating a robust front-end with HTML, CSS, Bootstrap, and Vanilla JS, and a back-end with Node.js and Express. This experience strengthened my leadership and web development skills.",
-    },
   ],
   education: [
     {
@@ -219,22 +171,6 @@ export const DATA = {
       logoUrl: "/college.jpg",
       start: "2019",
       end: "2023",
-    },
-    {
-      school: "Allen Career Institute",
-      href: "https://www.allen.ac.in/",
-      degree: "Higher Secondary School",
-      logoUrl: "/allen.jpg",
-      start: "2016",
-      end: "2018",
-    },
-    {
-      school: "Guru Gobind Singh Public School",
-      href: "https://www.ggpsbokaro.com/",
-      degree: "Secondary School",
-      logoUrl: "/ggps.png",
-      start: "2004",
-      end: "2016",
     },
   ],
   projects: [
@@ -261,6 +197,18 @@ export const DATA = {
           icon: <Icons.globe className='size-3' />,
         },
       ],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Tap to Trade",
+      href: "",
+      dates: "2026 - Present",
+      active: true,
+      description:
+        "One-tap MT5 trading for a live trading community, used by 5K active traders. Members place trades on MetaTrader 5 in a single tap.",
+      technologies: ["FastAPI", "Python", "MetaTrader 5"],
+      links: [],
       image: "",
       video: "",
     },
@@ -299,7 +247,7 @@ export const DATA = {
       dates: "Jan 2024 - Present",
       active: true,
       description:
-        "Daily LeetCode problem tracker with progress analytics, streak tracking, and personalized study plans for coding interview preparation.",
+        "Used by 444 developers. Daily LeetCode problem tracker with progress analytics, streak tracking, and personalized study plans for coding interview preparation.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -324,7 +272,7 @@ export const DATA = {
       dates: "Jan 2024 - Present",
       active: true,
       description:
-        "AI-powered learning platform with 750K+ organic visits, 35+ system design HLD/LLD roadmaps, trading strategy guides, and interactive AI tutoring using LangChain, Pinecone, OpenAI. Comprehensive resource for system design interviews and trading education.",
+        "750K+ organic visits. AI-powered learning platform with 35+ system design HLD/LLD roadmaps, trading strategy guides, and interactive AI tutoring using LangChain, Pinecone, OpenAI. Comprehensive resource for system design interviews and trading education.",
       technologies: [
         "Next.js",
         "TypeScript",
@@ -349,7 +297,7 @@ export const DATA = {
       dates: "May 2025 - Present",
       active: true,
       description:
-        "50+ accessible React components with TypeScript, Tailwind CSS, 100% A11y compliant. Beautifully designed component library built on top of TailwindCSS and Shadcn UI, inspired by Vercel and Linear aesthetics.",
+        "50+ React components with TypeScript and Tailwind CSS, built on Radix primitives for accessibility. Beautifully designed component library built on top of TailwindCSS and Shadcn UI, inspired by Vercel and Linear aesthetics.",
       technologies: [
         "React",
         "Fumadocs",
