@@ -361,7 +361,7 @@ let heroVisible=true; new IntersectionObserver(es=>heroVisible=es[0].isIntersect
 let CS=null; function charSize(){ if(CS) return CS; const sp=document.createElement('span'); sp.textContent='MMMMMMMMMM'; sp.style.cssText='position:absolute;visibility:hidden;white-space:pre'; pre.appendChild(sp); const r=sp.getBoundingClientRect(); sp.remove(); CS=[r.width/10||7, parseFloat(getComputedStyle(pre).lineHeight)||12]; return CS; } addEventListener('resize',()=>CS=null); document.fonts&&document.fonts.ready.then(()=>CS=null);
 function heroFrame(now){ requestAnimationFrame(heroFrame); if(!heroVisible||!HP) return;
 const t=now/1000; if(!dragging&&!reduce){ vy*=.94; ay+=vy; ay*=.985; }
-ax += ((.18+hover*.6) - ax)*.05; if(IS_FACE){ pre.style.display='none'; fcv.style.display='block'; renderFace(HP,reduce?-.2:ay+Math.sin(t*.5)*.32,ax-.15,t); return; }
+ax += ((.18+hover*.6) - ax)*.05; if(IS_FACE){ pre.style.display='none'; fcv.style.display='block'; renderFace(HP,ay+(reduce?0:Math.sin(t*.5)*.05),(ax-.18)*.4,t); return; }
 const cw=charSize(); const W=Math.max(40,Math.floor(box.clientWidth/cw[0])-2), H=Math.max(20,Math.floor((box.clientHeight-70)/cw[1]));
 sweep=(t*.35)%1.6-.3;
 render(pre,HP,W,H,reduce?-.3:ay+Math.sin(t*.5)*.55,ax,W*1.32,(p,l)=> (Math.abs(((p[0]+1)/2)-sweep)<.035 && l>.2)?1:0);
