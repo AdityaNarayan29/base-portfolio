@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aditya Narayan — AI engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;800;900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050608;--bg2:#0B0D11;--fg:#F2F3F5;--mute:#8A919C;--dim:#4B5260;--line:rgba(242,243,245,.08);--red:#FF3D2E;--red2:#FF7A59;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#050608;--fg:#F2F3F5}}
+:root[data-theme="dark"]{--bg:#050608;--fg:#F2F3F5}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:41;background:rgba(5,6,8,.75);backdrop-filter:blur(16px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;background:repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px)}
+.mono{font-family:'Geist Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--red);color:#fff}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:1px solid var(--red);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.glow{position:fixed;width:620px;height:620px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(255,61,46,.10),transparent 62%);transform:translate(-50%,-50%);left:70%;top:30%;transition:left .6s ease-out,top .6s ease-out}
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(5,6,8,.75);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;font-size:13px}
+nav.top .who{color:var(--fg)}
+nav.top .who b{color:var(--red);font-weight:500}
+nav.top ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;color:var(--mute)}
+nav.top ul a:hover{color:var(--fg)}
+nav.top .clock{color:var(--dim)}
+.hero{position:relative;z-index:1;min-height:calc(100svh - 60px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:20px}
+.hero .left{position:relative;z-index:2}
+.prompt{font-size:13px;color:var(--mute)}
+.prompt i{font-style:normal;color:var(--red)}
+.hero h1{font-size:clamp(56px,8.4vw,128px);font-weight:900;letter-spacing:-.055em;line-height:.86;margin:18px 0 0}
+.hero h1 .out{-webkit-text-stroke:1.2px var(--fg);color:transparent}
+.hero .lede{font-size:18px;color:var(--mute);max-width:470px;margin:26px 0 0;line-height:1.55}
+.hero .lede b{color:var(--fg);font-weight:500}
+.stats{display:flex;gap:34px;margin-top:30px;font-size:12.5px;color:var(--mute)}
+.stats b{display:block;font-family:'Geist',sans-serif;font-size:30px;font-weight:800;letter-spacing:-.04em;color:var(--fg);line-height:1}
+.stats b em{font-style:normal;color:var(--red)}
+.asciiBox{position:relative;height:min(76vh,660px);display:grid;place-items:center;cursor:grab;user-select:none;touch-action:pan-y}
+.asciiBox:active{cursor:grabbing}
+#ascii{margin:0;font-family:'Geist Mono',monospace;font-size:clamp(7px,.8vw,11.5px);line-height:1.05;color:var(--fg);white-space:pre;letter-spacing:.06em}
+#ascii .r{color:var(--red)}
+.asciiBox .tag{position:absolute;bottom:22px;right:0;font-size:11.5px;color:var(--dim)}
+.corner{position:absolute;width:14px;height:14px;border-color:var(--dim);border-style:solid}
+.c1{top:20px;left:10px;border-width:1px 0 0 1px}.c2{top:20px;right:0;border-width:1px 1px 0 0}.c3{bottom:50px;left:10px;border-width:0 0 1px 1px}.c4{bottom:50px;right:0;border-width:0 1px 1px 0}
+.term{margin-top:34px;max-width:520px;border:1px solid var(--line);border-radius:12px;background:rgba(11,13,17,.82);backdrop-filter:blur(12px);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.term .bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--line);font-size:11.5px;color:var(--dim)}
+.term .bar span.d{width:9px;height:9px;border-radius:50%;background:#20242C}
+.term .bar span.d:first-child{background:var(--red)}
+.term .bar .t{margin-left:8px}
+.term form{display:flex;align-items:center;gap:10px;padding:14px 16px 6px}
+.term form i{font-style:normal;color:var(--red)}
+.term input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--fg);font:inherit;font-family:'Geist Mono',monospace;font-size:14px;caret-color:var(--red)}
+.term input::placeholder{color:var(--dim)}
+.term .flags{display:flex;flex-wrap:wrap;gap:6px;padding:6px 16px 14px}
+.term .flags button{background:#11141A;border:1px solid var(--line);color:var(--mute);font:inherit;font-family:'Geist Mono',monospace;font-size:11.5px;border-radius:6px;padding:5px 9px;cursor:pointer;transition:color .2s,border-color .2s}
+.term .flags button:hover{color:var(--fg);border-color:rgba(255,61,46,.6)}
+.term .out{display:none;border-top:1px solid var(--line);padding:14px 16px 16px;max-height:36vh;overflow:auto}
+.term .out.on{display:block}
+.term .out .q{font-family:'Geist Mono',monospace;font-size:12px;color:var(--dim)}
+.term .out .a{margin-top:8px;font-size:15.5px;line-height:1.6;white-space:pre-wrap}
+.term .out .a.wait{color:var(--mute)}
+.term .out .a.wait::after{content:"▋";color:var(--red);animation:blink 1s steps(1) infinite;margin-left:2px}
+.term .out .meta{display:flex;justify-content:space-between;margin-top:12px;font-family:'Geist Mono',monospace;font-size:11px;color:var(--dim)}
+.term .out .meta button{background:none;border:0;color:var(--mute);font:inherit;cursor:pointer;padding:0;margin-left:14px}
+.term .out .meta button:hover{color:var(--red)}
+@keyframes blink{50%{opacity:0}}
+section{position:relative;z-index:1;padding:150px 0 0}
+.head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;margin-bottom:40px}
+.head .idx{font-size:12px;color:var(--red)}
+.head h2{font-size:clamp(42px,5.4vw,76px);font-weight:900;letter-spacing:-.05em;line-height:.92;margin:10px 0 0}
+.head p{margin:0;color:var(--mute);max-width:340px;font-size:15px;text-align:right}
+.proc{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg2)}
+.proc .row{display:grid;grid-template-columns:22px 170px minmax(0,1fr) 110px;gap:18px;align-items:baseline;padding:18px 22px;border-top:1px solid var(--line);transition:background .25s}
+.proc .row:first-child{border-top:0}
+.proc .row.hdr{font-family:'Geist Mono',monospace;font-size:11px;color:var(--dim);padding:12px 22px;background:#08090C}
+.proc .row:not(.hdr):hover{background:#10131A}
+.proc .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,61,46,.5);animation:ping 2.4s infinite;align-self:center}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,61,46,.5)}70%{box-shadow:0 0 0 8px rgba(255,61,46,0)}100%{box-shadow:0 0 0 0 rgba(255,61,46,0)}}
+.proc .nm{font-weight:600;font-size:16px}
+.proc .ds{color:var(--mute);font-size:14.5px;line-height:1.55}
+.proc .st{font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--dim);text-align:right}
+.proc .row:hover .st{color:var(--red)}
+.lead-line{font-size:clamp(24px,2.6vw,34px);font-weight:600;letter-spacing:-.025em;line-height:1.2;max-width:880px;margin:0 0 36px}
+.lead-line span{color:var(--mute)}
+.own{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--bg2);padding:26px;min-height:340px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .4s cubic-bezier(.2,.7,.1,1)}
+.card:hover{border-color:rgba(255,61,46,.45)}
+.card pre{position:absolute;right:6px;top:10px;margin:0;font-family:'Geist Mono',monospace;font-size:9px;line-height:1;color:rgba(242,243,245,.32);white-space:pre;transition:color .4s;pointer-events:none}
+.card:hover pre{color:var(--red2)}
+.card .big{font-size:clamp(56px,6vw,88px);font-weight:900;letter-spacing:-.06em;line-height:.9;position:relative}
+.card .lab{font-family:'Geist Mono',monospace;font-size:12px;color:var(--mute);margin-top:8px;position:relative}
+.card h3{margin:auto 0 8px;font-size:22px;font-weight:700;letter-spacing:-.02em;position:relative;padding-top:40px}
+.card p{margin:0;color:var(--mute);font-size:14.5px;max-width:44ch;position:relative}
+.card .stk{font-family:'Geist Mono',monospace;font-size:11px;color:var(--dim);margin-top:14px;position:relative}
+.card a.go{position:absolute;top:24px;right:24px;font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--mute);border:1px solid var(--line);border-radius:999px;padding:5px 10px;background:rgba(5,6,8,.6);z-index:2}
+.card a.go:hover{color:var(--fg);border-color:var(--red)}
+.card.wide{grid-column:span 2;min-height:300px}
+.log{border-left:1px solid var(--line);margin-left:7px}
+.commit{position:relative;padding:0 0 42px 34px}
+.commit::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--dim)}
+.commit.head-c::before{border-color:var(--red);background:var(--red);box-shadow:0 0 14px rgba(255,61,46,.6)}
+.commit .meta{font-family:'Geist Mono',monospace;font-size:12px;color:var(--dim);display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.commit .meta .h{color:#E3B341}
+.commit .meta .ref{color:var(--red);border:1px solid rgba(255,61,46,.4);border-radius:4px;padding:1px 6px}
+.commit .meta .ref.b{color:#58A6FF;border-color:rgba(88,166,255,.35)}
+.commit .t{display:flex;gap:14px;align-items:center;margin-top:10px}
+.commit .t h3{margin:0;font-size:24px;font-weight:700;letter-spacing:-.025em}
+.commit .t .co{color:var(--mute);font-size:15px}
+.logo{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;flex:none;background:#0E1015;overflow:hidden}
+.logo img{width:28px;height:28px;object-fit:contain;opacity:.9}
+.logo span{font-weight:800;font-size:13px;letter-spacing:-.02em}
+.commit ul{margin:12px 0 0;padding:0;list-style:none;color:var(--mute);font-size:14.5px;max-width:72ch}
+.commit li{padding-left:18px;position:relative;margin:4px 0}
+.commit li::before{content:"+";position:absolute;left:0;color:#3FB950;font-family:'Geist Mono',monospace}
+.honors{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.honors div{padding:26px;border-left:1px solid var(--line)}
+.honors div:first-child{border-left:0}
+.honors b{display:block;font-size:44px;font-weight:900;letter-spacing:-.05em;line-height:1}
+.honors span{display:block;color:var(--mute);font-size:13.5px;margin-top:10px}
+.contact{padding:180px 0 70px}
+.contact h2{font-size:clamp(56px,10vw,150px);font-weight:900;letter-spacing:-.06em;line-height:.85;margin:0}
+.contact h2 .out{-webkit-text-stroke:1.5px var(--fg);color:transparent}
+.contact .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-size:14.5px;background:var(--bg2);transition:border-color .2s,background .2s;cursor:pointer;color:var(--fg);font-family:inherit}
+.btn:hover{border-color:rgba(255,61,46,.6)}
+.btn.primary{background:var(--red);border-color:var(--red);color:#fff}
+.btn.primary:hover{background:#ff5446}
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:22px 0 36px;font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.2,.7,.1,1),transform .9s cubic-bezier(.2,.7,.1,1)}
+.reveal.in{opacity:1;transform:none}
+@media (max-width:900px){
+.wrap{padding:0 20px}
+nav.top ul,nav.top .clock{display:none}
+.hero{grid-template-columns:1fr;padding-top:30px}
+.asciiBox{height:340px;order:-1}
+.stats{gap:22px}
+.head{grid-template-columns:1fr}.head p{text-align:left}
+.proc .row{grid-template-columns:16px minmax(0,1fr);gap:12px}
+.proc .row .ds{grid-column:2}.proc .row .st{display:none}.proc .row.hdr{display:none}
+.own{grid-template-columns:1fr}.card.wide{grid-column:auto}
+.honors{grid-template-columns:repeat(2,minmax(0,1fr))}.honors div:nth-child(3){border-left:0}.honors div:nth-child(n+3){border-top:1px solid var(--line)}
+section{padding-top:100px}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<nav class="top">
+<div class="wrap mono">
+<a href="#top" class="who">aditya<b>@</b>dubai <span style="color:var(--dim)">~</span></a>
+<ul>
+<li><a href="#now">./now</a></li>
+<li><a href="#own">./products</a></li>
+<li><a href="#log">./log</a></li>
+<li><a href="#contact">./contact</a></li>
+</ul>
+<span class="clock" id="clock">Dubai --:--</span>
+</div>
+</nav>
+<main>
+<header class="wrap hero" id="top">
+<div class="left">
+<div class="prompt mono"><i>$</i> whoami</div>
+<h1 data-scr>Aditya<br><span class="out">Narayan</span></h1>
+<p class="lede">AI engineer in Dubai. I build <b>agent platforms</b>, <b>trading systems</b> and <b>developer tools</b> that real people use. Acting CTO at HireStella. Founder of Masst.</p>
+<div class="stats mono">
+<div><b data-count="1.2" data-dec="1" data-suf="B">1.2B</b>devices served</div>
+<div><b data-count="5" data-suf="K">5K</b>active traders</div>
+<div><b><em data-count="750" data-suf="K">750K</em></b>organic visits</div>
+</div>
+<div class="term" id="term">
+<div class="bar mono"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">ask-aditya — an AI trained on my real work</span></div>
+<form id="askForm" autocomplete="off">
+<i class="mono">&gt;</i>
+<label for="askIn" style="position:absolute;left:-9999px">Ask my AI about my work</label>
+<input id="askIn" maxlength="300" placeholder="ask me anything about my work">
+</form>
+<div class="flags">
+<button type="button" data-q="What’s the hardest system you’ve built?">--hardest-system</button>
+<button type="button" data-q="How did you cut voice AI costs from $100 to $3 an hour?">--voice-costs</button>
+<button type="button" data-q="Why should a startup hire you as a founding engineer?">--why-hire-me</button>
+</div>
+<div class="out" id="ans" aria-live="polite">
+<div class="q" id="ansQ"></div>
+<div class="a" id="ansA"></div>
+<div class="meta"><span>AI · can be wrong</span><span><button type="button" id="ansListen">listen</button><button type="button" id="ansClose">close</button></span></div>
+</div>
+</div>
+</div>
+<div class="asciiBox" id="asciiBox" aria-label="A rotating 3D model of the letters A N, drawn in text characters" role="img">
+<span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+<pre id="ascii"></pre>
+<div class="tag mono">drag to rotate · rendered in text, live</div>
+</div>
+</header>
+<section id="now">
+<div class="wrap">
+<div class="head reveal">
+<div><div class="idx mono">01 / now</div><h2 data-scr>HireStella</h2></div>
+<p>Acting CTO since July 2026. Stella is an AI employee that businesses hire.</p>
+</div>
+<p class="lead-line reveal">One AI employee that answers calls, runs marketing, books meetings, trains staff and reports back, in 120+ languages. <span>I lead the 12-person team building it.</span></p>
+<div class="proc reveal">
+<div class="row hdr"><span></span><span>MODULE</span><span>WHAT I DID</span><span style="text-align:right">STATUS</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Agent core</span><span class="ds">Built the super agent that orchestrates every Stella product, each with its own agentic layer.</span><span class="st">running</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Voice</span><span class="ds">Phone agents for real businesses. Took the cost per call-hour from about $100 to under $3.</span><span class="st">running</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Marketing</span><span class="ds">Built the marketing agent: ads, content, video generation and voice cloning in one suite.</span><span class="st">running</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Platform</span><span class="ds">Designed the architecture: separate agent and control planes, durable workflows, observability.</span><span class="st">running</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Infrastructure</span><span class="ds">Modelled cloud costs; leading the move to AWS in the UAE for data residency.</span><span class="st">migrating</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Partners</span><span class="ds">Shaped the white-label program that lets partners resell Stella under their own brand.</span><span class="st">live</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Team</span><span class="ds">Hired and onboarded the engineering team: 3 senior, 3 junior, 6 interns.</span><span class="st">12 people</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Go to market</span><span class="ds">Run client demos, build pricing, built the HireStella website.</span><span class="st">ongoing</span></div>
+<div class="row"><span class="dot"></span><span class="nm">Trust</span><span class="ds">Drove the ISO security certification effort for enterprise buyers.</span><span class="st">in review</span></div>
+</div>
+</div>
+</section>
+<section id="own">
+<div class="wrap">
+<div class="head reveal">
+<div><div class="idx mono">02 / products</div><h2 data-scr>Things I own</h2></div>
+<p>Built and run by me under Masst, my own product org since 2024.</p>
+</div>
+<div class="own">
+<article class="card reveal" data-tilt><pre data-art="chart"></pre>
+<div class="big" data-count="5" data-suf="K">5K</div><div class="lab">active traders</div>
+<h3>Tap to Trade</h3><p>A live trading community needed to act on calls instantly. One tap turns a signal into a placed MetaTrader 5 order.</p><div class="stk">fastapi · python · mt5</div></article>
+<article class="card reveal" data-tilt><pre data-art="graph"></pre><a class="go" href="https://docs.masst.dev">docs.masst.dev ↗</a>
+<div class="big" data-count="750" data-suf="K">750K</div><div class="lab">organic visits, zero ads</div>
+<h3>Masst Docs</h3><p>System design from fundamentals to real case studies: 35+ HLD and LLD roadmaps with an AI tutor.</p><div class="stk">next.js · langchain · pinecone · openai</div></article>
+<article class="card reveal" data-tilt><pre data-art="globe"></pre>
+<div class="big" data-count="1.2" data-dec="1" data-suf="B">1.2B</div><div class="lab">devices served · at Trasna</div>
+<h3>Telecom SaaS</h3><p>SIM and eSIM management for over a billion devices. 12+ microservices, 500K+ API requests a day.</p><div class="stk">next.js · fastapi · postgres · rabbitmq</div></article>
+<article class="card reveal" data-tilt><pre data-art="brain"></pre><a class="go" href="https://masst.ai">masst.ai ↗</a>
+<div class="big">MVP</div><div class="lab">building now</div>
+<h3>masst.ai</h3><p>A company brain: an AI layer that plugs into any product and answers from that company’s own knowledge.</p><div class="stk">langgraph · rag · pgvector</div></article>
+<article class="card wide reveal" data-tilt><pre data-art="torus"></pre>
+<div class="big">7 nodes</div><div class="lab">autonomous agent</div>
+<h3>MasstTrader, LeetDaily and more</h3><p>A LangGraph trading agent with risk guardrails, a LeetCode tracker used by 444 developers, a 50+ component UI kit, and a CLI that scaffolds a SaaS in 60 seconds.</p><div class="stk">langgraph · react · go · node</div></article>
+</div>
+</div>
+</section>
+<section id="log">
+<div class="wrap">
+<div class="head reveal">
+<div><div class="idx mono">03 / git log</div><h2 data-scr>Experience</h2></div>
+<p>Most recent first.</p>
+</div>
+<div class="log">
+<div class="commit head-c reveal"><div class="meta"><span class="h">a7f3c21</span><span class="ref">HEAD → hirestella</span><span>Jul 2026 – now · Dubai</span></div>
+<div class="t"><span class="logo"><span>HS</span></span><div><h3>Senior AI Engineer, acting CTO</h3><div class="co">HireStella</div></div></div>
+<ul><li>Lead the 12-person engineering team building Stella</li><li>Built the super agent behind every product</li><li>Voice AI from $100 to under $3 per hour</li></ul></div>
+<div class="commit head-c reveal"><div class="meta"><span class="h">5c09e4b</span><span class="ref b">masst/main</span><span>Jun 2024 – now</span></div>
+<div class="t"><span class="logo"><span style="color:var(--red)">M</span></span><div><h3>Founder</h3><div class="co">Masst · masst.dev, masst.ai</div></div></div>
+<ul><li>My own product org, built alongside full-time roles</li><li>Career break Mar–Jun 2026 to build masst.ai full-time</li></ul></div>
+<div class="commit reveal"><div class="meta"><span class="h">e81b2d0</span><span>Nov 2025 – Feb 2026 · Dubai</span></div>
+<div class="t"><span class="logo"><span>AZ</span></span><div><h3>Full Stack Developer</h3><div class="co">Azaya LLC</div></div></div>
+<ul><li>Multi-tenant CRM for 5 forex brokers, 10K+ daily transactions</li><li>15+ MetaTrader 5 instances on AWS at 99.9% uptime</li><li>Led 4 engineers; sprint velocity up 25%</li></ul></div>
+<div class="commit reveal"><div class="meta"><span class="h">3d4f9aa</span><span>Jul 2023 – Nov 2025 · Dubai</span></div>
+<div class="t"><span class="logo"><span>TR</span></span><div><h3>Software Engineer</h3><div class="co">Trasna Solutions</div></div></div>
+<ul><li>Telecom SaaS serving 1.2B+ SIM and eSIM devices</li><li>12+ microservices, 500K+ API requests a day</li><li>Deployment time cut by 70%</li></ul></div>
+<div class="commit reveal" style="padding-bottom:0"><div class="meta"><span class="h">0b1e7c3</span><span>Jun – Aug 2022</span></div>
+<div class="t"><span class="logo"><span>TCS</span></span><div><h3>Software Engineer Intern</h3><div class="co">TCS Digital</div></div></div>
+<ul><li>15+ security assessments; 95% test coverage with TDD</li></ul></div>
+</div>
+</div>
+</section>
+<section id="honors">
+<div class="wrap">
+<div class="head reveal"><div><div class="idx mono">04 / recognition</div><h2 data-scr>Receipts</h2></div><p></p></div>
+<div class="honors reveal">
+<div><b>#688</b><span>of 350K+ in TCS CodeVita 10</span></div>
+<div><b>4.6%</b><span>top percentile, GATE CS, qualified twice</span></div>
+<div><b>Vol. 3</b><span>editor and reviewer, ByteByteGo system design</span></div>
+<div><b>516</b><span>LeetCode problems solved</span></div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="wrap reveal">
+<div class="prompt mono"><i>$</i> ./contact --now</div>
+<h2 style="margin-top:18px">Let’s build<br><span class="out">something real.</span></h2>
+<div class="row">
+<button class="btn primary mono" id="copyMail" type="button">adityanarayan29j@gmail.com <span id="copyMsg" style="opacity:.8">copy</span></button>
+<a class="btn" href="https://www.linkedin.com/in/adityanarayan29/">LinkedIn ↗</a>
+<a class="btn" href="https://github.com/AdityaNarayan29">GitHub ↗</a>
+<a class="btn" href="https://masst.dev">masst.dev ↗</a>
+</div>
+</div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Aditya Narayan</span><span>built by hand · no templates · rendered in text</span></div></footer>
+<script>
+(() => {
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// clock
+const clk=document.getElementById('clock');
+function tick(){ try{ clk.textContent='Dubai '+new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Dubai',hour:'2-digit',minute:'2-digit'}).format(new Date()); }catch(e){} }
+tick(); setInterval(tick,15000);
+// glow follows cursor
+const glow=document.getElementById('glow');
+addEventListener('pointermove',e=>{ glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px'; });
+// reveal + scramble + count
+const CH='!<>-_\\/[]{}=+*^?#ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+function scramble(el){ if(reduce) return; const nodes=[]; const walk=n=>{ n.childNodes.forEach(c=>{ if(c.nodeType===3&&c.data.trim()) nodes.push([c,c.data]); else if(c.nodeType===1) walk(c); }); }; walk(el);
+const t1=performance.now(); (function f(now){ const k=Math.min(1,(now-t1)/900); nodes.forEach(([n,txt])=>{ const keep=Math.floor(txt.length*k); n.data=txt.slice(0,keep)+txt.slice(keep).replace(/\S/g,()=>CH[Math.random()*CH.length|0]); }); if(k<1) requestAnimationFrame(f); else nodes.forEach(([n,txt])=>n.data=txt); })(t1); }
+function count(el){ const to=+el.dataset.count, dec=+(el.dataset.dec||0), suf=el.dataset.suf||''; if(reduce) return; const t1=performance.now(); (function s(n){ const k=Math.min(1,(n-t1)/1500); el.textContent=(to*(1-Math.pow(1-k,4))).toFixed(dec)+suf; if(k<1) requestAnimationFrame(s); })(t1); }
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; io.unobserve(e.target); const el=e.target;
+if(el.classList.contains('reveal')) el.classList.add('in');
+el.querySelectorAll('[data-scr]').forEach(scramble); if(el.hasAttribute('data-scr')) scramble(el);
+el.querySelectorAll('[data-count]').forEach(count); if(el.hasAttribute('data-count')) count(el);
+}),{threshold:.15});
+document.querySelectorAll('.reveal, .hero h1, .stats').forEach(el=>io.observe(el));
+// card tilt
+document.querySelectorAll('[data-tilt]').forEach(c=>{ c.addEventListener('pointermove',e=>{ if(reduce) return; const r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; c.style.transform=`perspective(900px) rotateY(${x*6}deg) rotateX(${-y*6}deg)`; }); c.addEventListener('pointerleave',()=>c.style.transform=''); });
+// ---------- ASCII 3D engine
+const RAMP=' .,:;-=+*#%@';
+function lettersPoints(text,cols,rows,depth){
+const cv=document.createElement('canvas'); cv.width=cols; cv.height=rows; const g=cv.getContext('2d');
+g.fillStyle='#000'; g.fillRect(0,0,cols,rows); g.fillStyle='#fff'; g.textAlign='center'; g.textBaseline='middle';
+let fs=rows*0.95; g.font=`900 ${fs}px Geist, Arial Black, Arial, sans-serif`; const mw=g.measureText(text).width; if(mw>cols*.94){ fs*=cols*.94/mw; g.font=`900 ${fs}px Geist, Arial Black, Arial, sans-serif`; } g.fillText(text,cols/2,rows/2+fs*.04);
+const d=g.getImageData(0,0,cols,rows).data, on=(x,y)=>x>=0&&y>=0&&x<cols&&y<rows&&d[(y*cols+x)*4]>128;
+const P=[]; const sx=2/cols*1.0, aspect=rows/cols;
+for(let y=0;y<rows;y++) for(let x=0;x<cols;x++){ if(!on(x,y)) continue;
+const X=(x-cols/2)*sx, Y=(y-rows/2)*sx;
+P.push([X,Y,-depth,0,0,-1]); P.push([X,Y,depth,0,0,1]);
+const edges=[[1,0],[-1,0],[0,1],[0,-1]]; edges.forEach(([ex,ey])=>{ if(!on(x+ex,y+ey)) for(let z=-depth;z<=depth;z+=sx*.9) P.push([X+ex*sx*.5,Y+ey*sx*.5,z,ex,ey,0]); });
+}
+return P;
+}
+function render(pre,P,W,H,ay,ax,scale,redMask){
+const buf=new Array(W*H).fill(' '), zb=new Float32Array(W*H).fill(-1e9), red=new Uint8Array(W*H);
+const ca=Math.cos(ay),sa=Math.sin(ay),cb=Math.cos(ax),sb=Math.sin(ax);
+const L=[-.45,-.55,-.7], ln=Math.hypot(...L);
+for(const p of P){
+let x=p[0]*ca-p[2]*sa, z=p[0]*sa+p[2]*ca; let y=p[1]*cb-z*sb; z=p[1]*sb+z*cb;
+let nx=p[3]*ca-p[5]*sa, nz=p[3]*sa+p[5]*ca; let ny=p[4]*cb-nz*sb; nz=p[4]*sb+nz*cb;
+const ooz=1/(z+3.2), px=(W/2+x*scale*ooz*1.85)|0, py=(H/2+y*scale*ooz)|0;
+if(px<0||py<0||px>=W||py>=H) continue; const o=py*W+px;
+if(ooz>zb[o]){ zb[o]=ooz; let lum=(nx*L[0]+ny*L[1]+nz*L[2])/ln; lum=Math.max(0,lum*.85+.15+(1-(z+1.2)/2.4)*.18); buf[o]=RAMP[Math.min(RAMP.length-1,1+(lum*(RAMP.length-1))|0)]; red[o]=redMask?redMask(p,lum):0; }
+}
+let html=''; for(let r=0;r<H;r++){ let line=''; let inR=false; for(let c=0;c<W;c++){ const o=r*W+c, ch=buf[o]; const isR=red[o]===1; if(isR!==inR){ line+=isR?'<span class="r">':'</span>'; inR=isR; } line+=ch; } if(inR) line+='</span>'; html+=line+'\n'; }
+pre.innerHTML=html;
+}
+// hero AN
+const pre=document.getElementById('ascii'), box=document.getElementById('asciiBox');
+let HP=null, ay=0, ax=.18, vy=0, dragging=false, lx=0, hover=0, sweep=0;
+function buildHero(){ HP=lettersPoints('AN',200,96,.13); }
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(()=>{ buildHero(); });
+buildHero();
+box.addEventListener('pointerdown',e=>{ dragging=true; lx=e.clientX; box.setPointerCapture(e.pointerId); });
+box.addEventListener('pointermove',e=>{ const r=box.getBoundingClientRect(); hover=((e.clientY-r.top)/r.height-.5); if(dragging){ vy=(e.clientX-lx)*.004; ay+=vy; lx=e.clientX; } });
+box.addEventListener('pointerup',()=>dragging=false); box.addEventListener('pointercancel',()=>dragging=false);
+let heroVisible=true; new IntersectionObserver(es=>heroVisible=es[0].isIntersecting).observe(box);
+let CS=null; function charSize(){ if(CS) return CS; const sp=document.createElement('span'); sp.textContent='MMMMMMMMMM'; sp.style.cssText='position:absolute;visibility:hidden;white-space:pre'; pre.appendChild(sp); const r=sp.getBoundingClientRect(); sp.remove(); CS=[r.width/10||7, parseFloat(getComputedStyle(pre).lineHeight)||12]; return CS; } addEventListener('resize',()=>CS=null); document.fonts&&document.fonts.ready.then(()=>CS=null);
+function heroFrame(now){ requestAnimationFrame(heroFrame); if(!heroVisible||!HP) return;
+const t=now/1000; if(!dragging&&!reduce){ vy*=.94; ay+=vy; ay*=.985; }
+ax += ((.18+hover*.6) - ax)*.05;
+const cw=charSize(); const W=Math.max(40,Math.floor(box.clientWidth/cw[0])-2), H=Math.max(20,Math.floor((box.clientHeight-70)/cw[1]));
+sweep=(t*.35)%1.6-.3;
+render(pre,HP,W,H,reduce?-.3:ay+Math.sin(t*.5)*.55,ax,W*1.32,(p,l)=> (Math.abs(((p[0]+1)/2)-sweep)<.035 && l>.2)?1:0);
+}
+requestAnimationFrame(heroFrame);
+// card ASCII art
+const shapes={
+globe:(()=>{const P=[];for(let i=0;i<900;i++){const u=Math.random()*2-1,t=Math.random()*6.283,r=Math.sqrt(1-u*u);const x=r*Math.cos(t),y=u,z=r*Math.sin(t);P.push([x*.9,y*.9,z*.9,x,y,z]);}return P;})(),
+torus:(()=>{const P=[];for(let i=0;i<60;i++)for(let j=0;j<24;j++){const u=i/60*6.283,v=j/24*6.283,R=.7,r=.3;P.push([(R+r*Math.cos(v))*Math.cos(u),(R+r*Math.cos(v))*Math.sin(u),r*Math.sin(v),Math.cos(v)*Math.cos(u),Math.cos(v)*Math.sin(u),Math.sin(v)]);}return P;})(),
+brain:(()=>{const P=[];for(let i=0;i<1100;i++){const u=Math.random()*2-1,t=Math.random()*6.283,r=Math.sqrt(1-u*u),wob=1+.12*Math.sin(t*6+u*5);const x=r*Math.cos(t)*1.05*wob,y=u*.78*wob,z=r*Math.sin(t)*.9*wob;P.push([x*.85,y*.85,z*.85,x,y,z]);}return P;})(),
+chart:(()=>{const P=[];let v=0;const h=[];for(let i=0;i<14;i++){v+=Math.sin(i*1.3)*.25+.12;h.push(v);}const mn=Math.min(...h),mx=Math.max(...h);h.forEach((val,i)=>{const H=.25+((val-mn)/(mx-mn))*1.2,x=(i/13-.5)*1.8;for(let y=0;y<H;y+=.05)for(let z=-.06;z<=.06;z+=.06){P.push([x-.05,.7-y,z,-1,0,0]);P.push([x+.05,.7-y,z,1,0,0]);P.push([x,.7-y,z+.07,0,0,1]);}P.push([x,.7-H,0,0,-1,0]);});return P;})(),
+graph:(()=>{const N=[[0,0,0],[.8,.3,.2],[-.7,.4,-.3],[.2,-.75,.4],[-.3,-.55,-.65],[.6,-.25,-.7],[-.8,-.15,.6],[.4,.7,-.55]];const P=[];N.forEach((a,i)=>{for(let k=0;k<70;k++){const u=Math.random()*2-1,t=Math.random()*6.283,r=Math.sqrt(1-u*u),s=i?.07:.12;P.push([a[0]+r*Math.cos(t)*s,a[1]+u*s,a[2]+r*Math.sin(t)*s,r*Math.cos(t),u,r*Math.sin(t)]);}N.forEach((b,j)=>{if(j>i&&(i===0||(i+j)%3===0))for(let q=0;q<1;q+=.025)P.push([a[0]+(b[0]-a[0])*q,a[1]+(b[1]-a[1])*q,a[2]+(b[2]-a[2])*q,0,0,-1]);});});return P;})()
+};
+const arts=[...document.querySelectorAll('pre[data-art]')].map(p=>({p,shape:shapes[p.dataset.art],a:Math.random()*6,vis:false,hot:false}));
+arts.forEach(o=>{ new IntersectionObserver(es=>o.vis=es[0].isIntersecting).observe(o.p); const card=o.p.closest('.card'); card.addEventListener('pointerenter',()=>o.hot=true); card.addEventListener('pointerleave',()=>o.hot=false); });
+function artFrame(){ requestAnimationFrame(artFrame); arts.forEach(o=>{ if(!o.vis) return; if(!reduce) o.a+=o.hot?.03:.01; const wide=o.p.closest('.wide'); render(o.p,o.shape,wide?70:56,wide?30:30,o.a,o.p.dataset.art==='chart'?.25:.4,wide?44:34,null); }); }
+requestAnimationFrame(artFrame);
+// copy email
+const cm=document.getElementById('copyMail'), cmsg=document.getElementById('copyMsg');
+cm.addEventListener('click',async()=>{ try{ await navigator.clipboard.writeText('adityanarayan29j@gmail.com'); cmsg.textContent='copied'; }catch(e){ location.href='mailto:adityanarayan29j@gmail.com'; } setTimeout(()=>cmsg.textContent='copy',1800); });
+// ---------- Ask my AI
+const KB = `FACTS ABOUT ADITYA NARAYAN (the only facts you may use):
+- Senior AI engineer based in Dubai, UAE. Indian. B.Tech in Computer Science, Silicon University (Silicon Institute of Technology), 2019–2023. About 3.5 years of professional experience. Full-stack and architecture heavy, with production AI experience.
+- HireStella (Dubai), Senior AI Engineer and acting CTO, Jul 2026 to now. HireStella builds Stella, an AI employee businesses hire to work alongside their teams (voice, chat, marketing, scheduling, LMS/training, admin, analytics) in 120+ languages. Aditya leads the 12-person engineering team (3 senior, 3 junior, 6 interns). He built a super agent that orchestrates every Stella product (marketing, voice AI, multiple CRMs), each with its own agentic layer. He cut voice AI call cost from about $100 per hour to under $3 per hour. He designed the architecture with a separate agent plane (FastAPI) and control plane (NestJS), durable workflows and observability. He modelled cloud costs and leads the move to AWS in the UAE for data residency. He shaped the white-label program that lets partners resell Stella under their own brand, built the HireStella website, runs client demos and pricing, hired and onboarded the team, and drove the ISO security certification effort.
+- Masst (masst.dev, masst.ai), Founder, Jun 2024 to now: his own product org, built alongside full-time jobs. He took a career break Mar–Jun 2026 to build masst.ai full-time. Products: masst.ai (a "company brain", an AI knowledge layer that plugs into any product, MVP stage); Tap to Trade (one-tap MetaTrader 5 trading for a live trading community, 5K active traders, FastAPI and MT5); Masst Docs (AI system design learning platform, 35+ HLD/LLD roadmaps, 750K+ organic visits, zero ad spend, LangChain, Pinecone, OpenAI); MasstTrader V2 (7-node autonomous trading agent on LangGraph with tool use, risk guardrails and RAG); LeetDaily (LeetCode tracker and Chrome extension, 444 users); Masst UI (50+ React components on Radix); Masst CLI (scaffolds SaaS monorepos in 60 seconds); Masst DB (Go CLI for multi-database backups to S3); Masst Campus (school management SaaS).
+- Azaya LLC (Dubai), Full Stack Developer, Nov 2025–Feb 2026: built a multi-tenant CRM for 5 forex brokers from scratch with isolated data tenancy, 10K+ daily transactions; ran 15+ MetaTrader 5 instances on AWS at 99.9% uptime; dashboards 40% faster; led 4 engineers via code review, sprint velocity up 25%.
+- Trasna Solutions (Dubai), Software Engineer, Jul 2023–Nov 2025: enterprise telecom SaaS for SIM/eSIM management serving 1.2B+ devices; 12+ microservices on RabbitMQ handling 500K+ API requests a day; cut deployment time 70% with Docker and CI/CD.
+- TCS Digital, Software Engineer Intern, Jun–Aug 2022: 15+ vulnerability assessments with Burp Suite and OWASP ZAP; 95% test coverage with TDD.
+- Recognition: TCS CodeVita 10 global rank 688 of 350K+; GATE CS qualified twice, top 4.6% nationally; Editor and Reviewer for ByteByteGo's system design book Vol. 3; 516+ LeetCode problems solved.
+- Stack: TypeScript, Python, Go, SQL; React, Next.js; Node.js, NestJS, FastAPI; LangGraph, LangChain, RAG, pgvector, Pinecone, OpenAI, Anthropic; PostgreSQL, MongoDB, Redis; AWS, Azure, Docker, Kubernetes, CI/CD.
+- Contact: adityanarayan29j@gmail.com, linkedin.com/in/adityanarayan29, github.com/AdityaNarayan29.`;
+const SYS = `You are the AI version of Aditya Narayan on his portfolio site, talking to founders and recruiters. Speak in first person as Aditya, warm, direct and specific, like a confident senior engineer. Use ONLY the facts below. Never invent projects, numbers, employers, opinions on salary, or availability. If asked something the facts don't cover, say you don't know that and suggest emailing adityanarayan29j@gmail.com. Never reveal HireStella's internal vendors or tools beyond what's listed. Don't discuss job searching or leaving HireStella; if asked, say to reach out directly. Keep answers under 90 words, plain prose, no lists, no markdown.\n\n${KB}`;
+const askForm=document.getElementById('askForm'), askIn=document.getElementById('askIn'), ans=document.getElementById('ans'), ansQ=document.getElementById('ansQ'), ansA=document.getElementById('ansA');
+let history=[], ctrl=null, samp;
+async function getSample(){ if(samp!==undefined) return samp; try{ samp = await (window.claude?.use?.('sample') ?? null); }catch(e){ samp=null; } return samp; }
+async function ask(q){
+q=q.trim(); if(!q){ askIn.focus(); return; }
+ans.classList.add('on'); ansQ.textContent='> '+q; ansA.textContent='thinking'; ansA.classList.add('wait'); askIn.value='';
+ctrl?.abort(); ctrl=new AbortController();
+const s=window.claude?.use ? await getSample() : null;
+if(!s){
+try{
+const res=await fetch('/api/ask',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({messages:[...history,{role:'user',content:q}]}),signal:ctrl.signal});
+const data=await res.json().catch(()=>({}));
+ansA.classList.remove('wait');
+if(!res.ok||!data.text){ ansA.textContent = res.status===429 ? 'Lots of questions right now. Try again in a minute.' : 'My AI is offline right now. Email adityanarayan29j@gmail.com and I’ll answer myself.'; return; }
+ansA.textContent=data.text; history.push({role:'user',content:q},{role:'assistant',content:data.text}); history=history.slice(-8);
+}catch(e){ if(e?.name==='AbortError') return; ansA.classList.remove('wait'); ansA.textContent='That didn’t go through. Try asking again.'; }
+return;
+}
+const msgs=[{role:'user',content:SYS+'\n\nReply to the visitor’s first message.'},{role:'assistant',content:'Understood.'},...history,{role:'user',content:q}];
+try{
+const r=await s(msgs,{signal:ctrl.signal,cache:false,modelTier:'quick',onText:({text})=>{ ansA.classList.remove('wait'); ansA.textContent=text; }});
+ansA.classList.remove('wait'); ansA.textContent=r.text; history.push({role:'user',content:q},{role:'assistant',content:r.text}); history=history.slice(-8);
+}catch(e){ if(e?.name==='AbortError') return; ansA.classList.remove('wait');
+ansA.textContent = e?.code==='rate_limited' ? 'Lots of questions right now. Try again in a minute.' : e?.code==='not_granted' ? 'The AI needs permission to answer here. You can also email adityanarayan29j@gmail.com.' : 'That didn’t go through. Try asking again.'; }
+}
+askForm.addEventListener('submit',e=>{ e.preventDefault(); ask(askIn.value); });
+document.querySelectorAll('.term .flags button').forEach(b=>b.addEventListener('click',()=>ask(b.dataset.q)));
+document.getElementById('ansClose').addEventListener('click',()=>{ ctrl?.abort(); try{speechSynthesis.cancel();}catch(e){} ans.classList.remove('on'); });
+const listen=document.getElementById('ansListen'); if(!('speechSynthesis' in window)) listen.style.display='none';
+listen.addEventListener('click',()=>{ if(speechSynthesis.speaking){ speechSynthesis.cancel(); listen.textContent='listen'; return; } const u=new SpeechSynthesisUtterance(ansA.textContent); u.rate=1.02; u.onend=()=>listen.textContent='listen'; listen.textContent='stop'; speechSynthesis.speak(u); });
+})();
+</script>
+</body>
+</html>
